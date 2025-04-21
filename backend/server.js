@@ -30,7 +30,7 @@ app.use(cookieParser())
 
 const PORT = process.env.PORT || 3000;
 
-const __dirname = path.resolve()
+const __dirname = path.resolve();
 
 
 app.use('/api/auth',authRoutes);
@@ -40,13 +40,13 @@ app.use('/api/coupon',couponRoutes);
 app.use('/api/payments',paymentRoutes);
 app.use('/api/analytics',analyticRoutes);
 
-if(process.env.NODE_ENV ==='production'){
-    app.use(express.static(path.join(__dirname,"/frontend/dist")));
+// if(process.env.NODE_ENV ==='production'){
+//     app.use(express.static(path.join(__dirname,"/frontend/dist")));
 
-    app.get("*",(req,res)=>{
-        res.sendFile(path.resolve(__dirname,"frontend","dist","index.html"));
-    });
-}
+//     app.get("*",(req,res)=>{
+//         res.sendFile(path.resolve(__dirname,"frontend","dist","index.html"));
+//     });
+// }
 
 app.listen(PORT,()=>{
     console.log('server listenin at',+ PORT)

@@ -21,7 +21,7 @@ export const getAllProducts = async(req,res)=>{
 export const getFeaturedProducts = async(req,res)=>{
     try {
         let featuredProducts = await redis.get("featured_products");
-        console.log('from redis',featuredProducts)
+        // console.log('from redis',featuredProducts)
         if(featuredProducts){
             return res.status(200).json(JSON.parse(featuredProducts))
         }
