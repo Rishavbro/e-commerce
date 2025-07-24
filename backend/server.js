@@ -36,7 +36,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 app.get('/api/test', (req, res) => {
-    res.json({ success: true });
+    res.json({ success: true,message:"hello" });
   });
 
 app.use('/api/auth',authRoutes);
